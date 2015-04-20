@@ -11,8 +11,22 @@ public class Game {
     mMisses = "";
 
   }
+  private char validateGuess(char letter) {
+
+    if (!Character.isLetter(letter)) {
+
+      throw new IllegalArgumentException("A letter is required");
+
+    }
+    letter = Character.toLowerCase(letter);
+    if (mMisses.indexOf(letter) >= 0 || mHits.indexOf(letter) >= 0) {
+      throw new IllegalArgumentException(letter + " has already been guessed");
+    }
+    return letter;
+  }
   public boolean applyGuess(char letter) {
 
+    letter = validateGuess(letter);
     boolean isHit = mAnswer.indexOf(letter) >= 0;
     if (isHit) {
       mHits += letter;

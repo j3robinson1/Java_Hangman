@@ -26,9 +26,8 @@ public class Prompter {
     while (! isValidGuess) {
 
     String guessAsString = console.readLine("Enter a letter:  ");
-    char guess = guessAsString.charAt(0);
     try {
-      isHit = mGame.applyGuess(guess);
+      isHit = mGame.applyGuess(guessAsString);
       isValidGuess = true;
     }catch (IllegalArgumentException iae) {
       console.printf("%s. Please try again.\n", iae.getMessage());

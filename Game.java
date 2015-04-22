@@ -22,6 +22,7 @@ public class Game {
     if (mMisses.indexOf(letter) >= 0 || mHits.indexOf(letter) >= 0) {
       throw new IllegalArgumentException(letter + " has already been guessed");
     }
+    System.out.printf("Used: %s\n", mMisses);
     return letter;
   }
   public boolean applyGuess(String letters) {

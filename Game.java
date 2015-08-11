@@ -61,6 +61,19 @@ public class Game {
     }
     return progress;
   }
+  public String getMan() {
+
+    String man[] = new String[8];
+    man[0] = " --\n   |\n   |\n   |\n_____\n";
+    man[1] = " --\n o |\n   |\n   |\n_____\n";
+    man[2] = " --\n o |\n | |\n   |\n_____\n";
+    man[3] = " --\n o |\n/| |\n   |\n_____\n";
+    man[4] = " --\n o |\n/|\\|\n   |\n_____\n";
+    man[5] = " --\n o |\n/|\\|\n/  |\n_____\n";
+    man[6] = " --\n o |\n/|\\|\n/ \\|\n_____\n";
+    System.out.println(man[mMisses.length()]);
+    return man[0];
+  }
   public int getRemainingTries() {
 
     return MAX_MISSES - mMisses.length();
